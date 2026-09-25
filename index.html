@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6a11cb">
+<title>AnimeVerse - Nonton Anime</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo" onclick="showHome()">Anime<span>Verse</span></div>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Cari anime...">
+    <button onclick="searchAnime()">🔍</button>
+  </div>
+
+  <nav>
+    <a href="#" onclick="showHome()">Home</a>
+    <a href="#" onclick="loadTopAnime()">Top</a>
+    <a href="#" onclick="loadSeasonNow()">Season</a>
+    <button id="themeToggle" class="theme-btn" onclick="toggleTheme()">🌙</button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <h1>Selamat Datang di AnimeVerse</h1>
+  <p>Temukan dan tonton anime favoritmu dengan data real-time dari MyAnimeList.</p>
+  <button class="btn" onclick="loadTopAnime()">Lihat Anime Populer</button>
+</section>
+
+<!-- KONTEN UTAMA -->
+<section class="section">
+  <h2 id="sectionTitle">🔥 Anime Populer</h2>
+  <div class="anime-grid" id="animeGrid">
+    <div class="loader">Memuat anime...</div>
+  </div>
+</section>
+
+<!-- MODAL DETAIL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 AnimeVerse. Data dari <a href="https://jikan.moe" target="_blank">Jikan API</a>.
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
