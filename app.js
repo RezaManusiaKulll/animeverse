@@ -81,6 +81,7 @@ async function showDetail(id) {
     const { data } = await res.json();
 
     const trailerId = data.trailer?.youtube_id;
+    const museSearch = `https://www.youtube.com/@MuseIndonesia/search?query=${encodeURIComponent(data.title)}`;
 
     modalBody.innerHTML = `
       <div class="modal-header">
@@ -103,6 +104,9 @@ async function showDetail(id) {
                   allowfullscreen allow="autoplay; encrypted-media"></iframe>
         </div>
       ` : ''}
+      <a href="${museSearch}" target="_blank" class="btn-muse">
+        🎬 Cari di Muse Indonesia
+      </a>
     `;
   } catch (e) {
     modalBody.innerHTML = '<div class="loader">Gagal memuat detail.</div>';
